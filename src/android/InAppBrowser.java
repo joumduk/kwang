@@ -449,11 +449,7 @@ public class InAppBrowser extends CordovaPlugin {
         InputMethodManager imm = (InputMethodManager)this.cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(edittext.getWindowToken(), 0);
 
-        if (!url.startsWith("http") && !url.startsWith("file:")) {
-            this.inAppWebView.loadUrl("http://" + url);
-        } else {
-            this.inAppWebView.loadUrl(url);
-        }
+        this.inAppWebView.loadUrl(url);
         this.inAppWebView.requestFocus();
     }
 
